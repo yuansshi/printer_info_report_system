@@ -25,6 +25,11 @@ class DashboardAssetTests(unittest.TestCase):
         self.assertIn('url.searchParams.set("refresh", Date.now().toString())', application)
         self.assertIn("window.location.replace(url)", application)
 
+    def test_date_filter_uses_a_plain_all_dates_label(self) -> None:
+        application = (ROOT / "dashboard" / "app.js").read_text(encoding="utf-8")
+        self.assertIn('<option value="all">全部日期</option>', application)
+        self.assertNotIn('DATA.metadata.range.end.slice(5)', application)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -742,7 +742,7 @@
 
   function populateFilters() {
     elements.dateFilter.innerHTML = [
-      `<option value="all">${DATA.metadata.range.start} 至 ${DATA.metadata.range.end.slice(5)}</option>`,
+      '<option value="all">全部日期</option>',
       ...DATA.metadata.range.dates.map((date) => `<option value="${date}">${date}</option>`),
     ].join("");
     elements.customerFilter.innerHTML = [
