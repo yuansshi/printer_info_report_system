@@ -43,7 +43,7 @@ Fuji Xerox/Fujifilm Business Innovation 打印机邮件采集、历史保存、E
 2. `对比文件.xlsx`
 3. `打印机状态-2026-06-20-00001.xlsx`
 
-这些文件目前通过本机路径读取。路径配置化已列入首个项目里程碑。
+这些文件作为运行时输入保存在源码仓库之外。默认读取 `config/` 下的本地文件，也可以通过 `PRINTER_ENV_FILE` 和 `PRINTER_MAPPING_PATH` 指定远程部署路径。
 
 ## Dashboard 数据基线
 
