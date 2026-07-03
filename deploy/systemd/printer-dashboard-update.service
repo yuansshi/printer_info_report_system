@@ -1,0 +1,18 @@
+[Unit]
+Description=Update Fuji Xerox printer dashboard data
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=printer-dashboard
+Group=printer-dashboard
+WorkingDirectory=/opt/printer-dashboard
+EnvironmentFile=-/etc/printer-dashboard/printer-dashboard.env
+ExecStart=/usr/bin/python3 /opt/printer-dashboard/update_printer_dashboard.py --config /etc/printer-dashboard/dashboard_config.json
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/printer-dashboard /var/www/printer-dashboard

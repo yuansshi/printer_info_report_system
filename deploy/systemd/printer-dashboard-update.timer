@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the printer dashboard update every day
+
+[Timer]
+OnCalendar=*-*-* 01:15:00 Asia/Shanghai
+Persistent=true
+RandomizedDelaySec=5m
+Unit=printer-dashboard-update.service
+
+[Install]
+WantedBy=timers.target

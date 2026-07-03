@@ -1,0 +1,16 @@
+{
+  "start_date": "2026-06-01",
+  "timezone": "Asia/Shanghai",
+  "env_file": "/etc/printer-dashboard/mail.env",
+  "mapping_path": "/var/lib/printer-dashboard/客户名称机身编号映射表.xlsx",
+  "history_dir": "/var/lib/printer-dashboard/history/daily",
+  "runs_dir": "/var/lib/printer-dashboard/history/runs",
+  "revisions_dir": "/var/lib/printer-dashboard/history/revisions",
+  "dashboard_builder": "/opt/printer-dashboard/dashboard/build_data.mjs",
+  "dashboard_output": "/var/www/printer-dashboard/data.js",
+  "refresh_overlap_days": 3,
+  "backfill_workers": 3,
+  "fetch_retries": 3,
+  "minimum_parse_rate": 0.98,
+  "node_bin": "/usr/bin/node"
+}

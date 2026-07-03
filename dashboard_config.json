@@ -1,0 +1,16 @@
+{
+  "start_date": "2026-06-01",
+  "timezone": "Asia/Shanghai",
+  "env_file": "config/mail.env",
+  "mapping_path": "config/客户名称机身编号映射表.xlsx",
+  "history_dir": "data/printer_history/daily",
+  "runs_dir": "data/printer_history/runs",
+  "revisions_dir": "data/printer_history/revisions",
+  "dashboard_builder": "dashboard/build_data.mjs",
+  "dashboard_output": "dashboard/data.js",
+  "refresh_overlap_days": 3,
+  "backfill_workers": 3,
+  "fetch_retries": 3,
+  "minimum_parse_rate": 0.98,
+  "node_bin": "/opt/homebrew/bin/node"
+}

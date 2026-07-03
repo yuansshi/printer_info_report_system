@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Printer Operations Dashboard</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="data.js"></script>
+    <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主导航">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span class="fallback-symbol">▣</span>
+            <i data-lucide="printer"></i>
+          </div>
+          <div>
+            <div class="brand-name">Printer Operations</div>
+            <div class="brand-subtitle">Fuji Xerox fleet</div>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <button class="nav-item is-active" type="button" data-view="overview">
+            <i data-lucide="layout-dashboard"></i><span>总览</span>
+          </button>
+          <button class="nav-item" type="button" data-view="devices">
+            <i data-lucide="printer-check"></i><span>设备</span>
+            <span class="nav-count" id="nav-device-count">0</span>
+          </button>
+          <button class="nav-item" type="button" data-view="alerts">
+            <i data-lucide="triangle-alert"></i><span>告警</span>
+            <span class="nav-count nav-count-alert" id="nav-alert-count">0</span>
+          </button>
+          <button class="nav-item" type="button" data-view="meters">
+            <i data-lucide="gauge"></i><span>计费器</span>
+          </button>
+          <button class="nav-item" type="button" data-view="quality">
+            <i data-lucide="shield-check"></i><span>数据质量</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-meta">
+          <div class="source-status"><span class="status-dot"></span>自动历史快照</div>
+          <div id="sidebar-range">--</div>
+          <div id="sidebar-freshness">最后完整日 --</div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">设备运营</div>
+            <h1 id="page-title">打印机状态总览</h1>
+            <p id="page-context">正在载入数据</p>
+          </div>
+          <div class="top-actions">
+            <button class="icon-button" id="refresh-button" type="button" title="重新载入数据" aria-label="重新载入数据">
+              <span class="fallback-symbol" aria-hidden="true">↻</span>
+              <i data-lucide="refresh-cw"></i>
+            </button>
+            <button class="command-button" id="export-button" type="button">
+              <i data-lucide="download"></i><span>导出当前设备</span>
+            </button>
+          </div>
+        </header>
+
+        <section class="filterbar" aria-label="数据筛选">
+          <label class="search-control">
+            <i data-lucide="search"></i>
+            <input id="search-input" type="search" placeholder="搜索机身编号、客户、位置或型号" autocomplete="off" />
+          </label>
+          <label class="field-control">
+            <span>日期</span>
+            <select id="date-filter"></select>
+          </label>
+          <label class="field-control">
+            <span>客户</span>
+            <select id="customer-filter"></select>
+          </label>
+          <label class="field-control">
+            <span>状态</span>
+            <select id="status-filter">
+              <option value="all">全部状态</option>
+              <option value="critical">紧急/故障</option>
+              <option value="consumable">耗材</option>
+              <option value="fault">故障</option>
+              <option value="meter">计费器</option>
+              <option value="mapping">映射问题</option>
+            </select>
+          </label>
+          <button class="text-button" id="reset-filters" type="button">重置</button>
+        </section>
+
+        <div class="content-area">
+          <section class="page-view is-active" data-page="overview">
+            <div class="kpi-grid" id="kpi-grid"></div>
+
+            <div class="dashboard-grid dashboard-grid-primary">
+              <section class="panel panel-wide">
+                <div class="panel-header">
+                  <div>
+                    <h2 id="trend-title">每日通知与状态变化</h2>
+                    <p id="trend-subtitle">按上海自然日统计</p>
+                  </div>
+                  <div class="trend-header-controls">
+                    <div class="segmented-control" aria-label="趋势统计周期">
+                      <button class="is-active" type="button" data-granularity="day">日</button>
+                      <button type="button" data-granularity="week">周</button>
+                      <button type="button" data-granularity="month">月</button>
+                    </div>
+                    <div class="chart-legend" aria-label="图例">
+                      <span><i class="legend-swatch legend-events"></i>通知</span>
+                      <span><i class="legend-swatch legend-states"></i>状态</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="trend-chart" id="trend-chart" role="img" aria-label="每日通知趋势图"></div>
+              </section>
+
+              <section class="panel">
+                <div class="panel-header">
+                  <div>
+                    <h2>客户活动量</h2>
+                    <p>按通知数量排序</p>
+                  </div>
+                </div>
+                <div class="bar-list" id="customer-bars"></div>
+              </section>
+            </div>
+
+            <div class="dashboard-grid dashboard-grid-secondary">
+              <section class="panel panel-wide">
+                <div class="panel-header">
+                  <div>
+                    <h2>最近高优先级事件</h2>
+                    <p id="overview-alert-count">--</p>
+                  </div>
+                  <button class="text-button view-link" type="button" data-view="alerts">查看全部</button>
+                </div>
+                <div class="alert-list" id="overview-alerts"></div>
+              </section>
+
+              <section class="panel">
+                <div class="panel-header">
+                  <div>
+                    <h2>数据质量</h2>
+                    <p>发布前检查</p>
+                  </div>
+                  <button class="icon-button compact view-link" type="button" data-view="quality" title="查看数据质量" aria-label="查看数据质量">
+                    <span class="fallback-symbol" aria-hidden="true">→</span>
+                    <i data-lucide="arrow-right"></i>
+                  </button>
+                </div>
+                <div class="quality-summary" id="quality-summary"></div>
+              </section>
+            </div>
+          </section>
+
+          <section class="page-view" data-page="devices">
+            <section class="panel table-panel">
+              <div class="panel-header">
+                <div>
+                  <h2>设备状态</h2>
+                  <p id="device-table-count">--</p>
+                </div>
+                <div class="segmented-control" aria-label="设备排序">
+                  <button type="button" data-sort="latest" class="is-active">最近</button>
+                  <button type="button" data-sort="notifications">通知量</button>
+                  <button type="button" data-sort="serial">编号</button>
+                </div>
+              </div>
+              <div class="table-scroll">
+                <table class="data-table device-table">
+                  <thead>
+                    <tr>
+                      <th>状态</th>
+                      <th>机身编号</th>
+                      <th>客户与位置</th>
+                      <th>型号</th>
+                      <th>最近时间</th>
+                      <th class="numeric">通知</th>
+                      <th class="numeric">状态数</th>
+                      <th>观察项</th>
+                    </tr>
+                  </thead>
+                  <tbody id="device-table-body"></tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <section class="page-view" data-page="alerts">
+            <section class="panel table-panel">
+              <div class="panel-header">
+                <div>
+                  <h2>状态与告警事件</h2>
+                  <p id="alert-table-count">--</p>
+                </div>
+              </div>
+              <div class="table-scroll">
+                <table class="data-table alert-table">
+                  <thead>
+                    <tr>
+                      <th>级别</th>
+                      <th>时间</th>
+                      <th>设备</th>
+                      <th>客户与位置</th>
+                      <th>类型</th>
+                      <th>内容</th>
+                    </tr>
+                  </thead>
+                  <tbody id="alert-table-body"></tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <section class="page-view" data-page="meters">
+            <div class="notice-banner">
+              <i data-lucide="info"></i>
+              <div>
+                <strong>计费器原始值</strong>
+                <span>字段 `[1]-[5]` 的业务含义需要按具体型号确认，当前不直接标记为黑白、彩色、复印或扫描。</span>
+              </div>
+            </div>
+            <div class="kpi-grid compact-kpis" id="meter-kpis"></div>
+            <section class="panel table-panel">
+              <div class="panel-header">
+                <div>
+                  <h2>最新计费器快照</h2>
+                  <p id="meter-table-count">--</p>
+                </div>
+              </div>
+              <div class="table-scroll">
+                <table class="data-table meter-table">
+                  <thead>
+                    <tr>
+                      <th>时间</th>
+                      <th>机身编号</th>
+                      <th>客户</th>
+                      <th>型号</th>
+                      <th class="numeric">[1]</th>
+                      <th class="numeric">[2]</th>
+                      <th class="numeric">[3]</th>
+                      <th class="numeric">[4]</th>
+                      <th class="numeric">[5]</th>
+                      <th>定义</th>
+                    </tr>
+                  </thead>
+                  <tbody id="meter-table-body"></tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+
+          <section class="page-view" data-page="quality">
+            <section class="notice-banner">
+              <i data-lucide="database"></i>
+              <div>
+                <strong>数据来源与统计口径</strong>
+                <p id="source-methodology">正在载入数据来源</p>
+              </div>
+            </section>
+            <div class="quality-grid" id="quality-grid"></div>
+            <section class="panel table-panel">
+              <div class="panel-header">
+                <div>
+                  <h2>映射问题设备</h2>
+                  <p>需要在客户映射表中处理</p>
+                </div>
+              </div>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>问题</th>
+                      <th>机身编号</th>
+                      <th>当前客户</th>
+                      <th>当前位置</th>
+                      <th>型号</th>
+                      <th>最近时间</th>
+                    </tr>
+                  </thead>
+                  <tbody id="quality-device-body"></tbody>
+                </table>
+              </div>
+            </section>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+    <aside class="device-drawer" id="device-drawer" aria-label="设备详情" aria-hidden="true">
+      <div class="drawer-header">
+        <div>
+          <div class="eyebrow">设备详情</div>
+          <h2 id="drawer-title">--</h2>
+          <p id="drawer-subtitle">--</p>
+        </div>
+        <button class="icon-button" id="drawer-close" type="button" title="关闭" aria-label="关闭设备详情">
+          <span class="fallback-symbol" aria-hidden="true">×</span>
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="drawer-content" id="drawer-content"></div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <noscript>此仪表盘需要启用 JavaScript。</noscript>
+  </body>
+</html>

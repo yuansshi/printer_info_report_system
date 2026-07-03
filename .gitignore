@@ -1,0 +1,16 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+config/mail.env
+config/*.xlsx
+__pycache__/
+*.pyc
+.playwright-cli/
+data/printer_history/
+dashboard/data.js
+node_modules
+output/
+outputs/
+workbook_analysis/
