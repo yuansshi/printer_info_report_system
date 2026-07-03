@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import unittest
@@ -10,7 +11,9 @@ from tempfile import TemporaryDirectory
 from unittest import mock
 
 from update_printer_dashboard import (
+    DAILY_REPORT_SCHEMA_VERSION,
     contiguous_ranges,
+    daily_report_is_current,
     load_config,
     selected_fetch_dates,
     update_lock,
@@ -121,7 +124,35 @@ class DashboardUpdateTests(unittest.TestCase):
                 config = load_config(config_path)
             self.assertEqual(config["history_dir"], data_root / "daily")
             self.assertEqual(config["runs_dir"], data_root / "runs")
+            self.assertEqual(config["daily_reports_dir"], data_root / "daily_reports")
             self.assertEqual(config["dashboard_output"], output)
+
+    def test_daily_report_manifest_detects_changed_output(self) -> None:
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root / "report.xlsx"
+            manifest = root / "manifest.json"
+            inputs = {
+                "mail_sha256": "mail",
+                "states_sha256": "states",
+                "mapping_sha256": "mapping",
+                "builder_sha256": "builder",
+            }
+            output.write_bytes(b"workbook")
+            manifest.write_text(
+                json.dumps(
+                    {
+                        "schema_version": DAILY_REPORT_SCHEMA_VERSION,
+                        "inputs": inputs,
+                        "output": {"sha256": hashlib.sha256(b"workbook").hexdigest()},
+                    }
+                ),
+                encoding="utf-8",
+            )
+            self.assertTrue(daily_report_is_current(manifest, output, inputs))
+
+            output.write_bytes(b"changed")
+            self.assertFalse(daily_report_is_current(manifest, output, inputs))
 
 
 if __name__ == "__main__":

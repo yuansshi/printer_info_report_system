@@ -6,6 +6,7 @@ import { FileBlob, SpreadsheetFile, Workbook } from "@oai/artifact-tool";
 
 const workspace = path.dirname(fileURLToPath(import.meta.url));
 const targetDate = process.argv[2] ?? "2026-07-02";
+const archiveMode = process.env.PRINTER_ARCHIVE_MODE === "1";
 const mappingPath = path.resolve(
   process.argv[4] ?? process.env.PRINTER_MAPPING_PATH ?? path.join(workspace, "config/客户名称机身编号映射表.xlsx"),
 );
@@ -26,7 +27,10 @@ const outputPath = path.resolve(
 const outputDir = path.dirname(outputPath);
 const previewPath = path.join(workspace, `workbook_analysis/打印机状态-${targetDate}-preview.png`);
 const validationPath = path.join(workspace, `workbook_analysis/final-validation-${targetDate}.json`);
-const combinedOutputPath = path.join(outputDir, `打印机信息汇总-${targetDate}.xlsx`);
+const combinedOutputPath = path.resolve(
+  process.env.PRINTER_COMBINED_OUTPUT_PATH ??
+    path.join(outputDir, `打印机信息汇总-${targetDate}.xlsx`),
+);
 const combinedPreviewPaths = {
   mapping: path.join(workspace, `workbook_analysis/combined-mapping-${targetDate}.png`),
   comparison: path.join(workspace, `workbook_analysis/combined-comparison-${targetDate}.png`),
@@ -436,44 +440,54 @@ async function buildCombinedWorkbook(mappingRows, comparisonRows, statusRows) {
 await fs.mkdir(outputDir, { recursive: true });
 
 const mappingWorkbook = await importWorkbook(mappingPath);
-const mappingAllRows = mappingWorkbook.worksheets.getItem("Sheet1").getRange("A1:C113").values;
+const mappingAllRows = mappingWorkbook.worksheets.getItem("Sheet1").getUsedRange(true).values;
 const mappingRows = mappingAllRows.slice(1);
 const { selected: mapping, duplicates: mappingDuplicates } = buildMapping(mappingRows);
 const states = JSON.parse(await fs.readFile(statesPath, "utf8"));
 const statesForDate = states.filter(state => String(state.timestamp).startsWith(targetDate));
 const mapped = mapPrinterStates(statesForDate, mapping, targetDate);
-const referenceValidation = await validateReferenceTransformation();
-const june20ComparisonValidation = await validateCurrentRunAgainstJune20References(mapped);
-if (!referenceValidation.exactMatch) throw new Error("Reference deduplication validation failed");
+const referenceValidation = archiveMode
+  ? { skipped: true, reason: "daily archive mode" }
+  : await validateReferenceTransformation();
+const june20ComparisonValidation = archiveMode
+  ? null
+  : await validateCurrentRunAgainstJune20References(mapped);
+if (!archiveMode && !referenceValidation.exactMatch) {
+  throw new Error("Reference deduplication validation failed");
+}
 
-const { workbook, usedRange } = await buildWorkbook(mapped.rows);
-const tableCheck = await workbook.inspect({
-  kind: "table",
-  sheetId: "Sheet1",
-  range: usedRange,
-  maxChars: 7000,
-  tableMaxRows: 15,
-  tableMaxCols: 9,
-  tableMaxCellChars: 160,
-});
-const formulaErrors = await workbook.inspect({
-  kind: "match",
-  searchTerm: "#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A",
-  options: { useRegex: true, maxResults: 300 },
-  summary: "final formula error scan",
-});
+let tableCheck = { ndjson: "" };
+let formulaErrors = { ndjson: "" };
+if (!archiveMode) {
+  const { workbook, usedRange } = await buildWorkbook(mapped.rows);
+  tableCheck = await workbook.inspect({
+    kind: "table",
+    sheetId: "Sheet1",
+    range: usedRange,
+    maxChars: 7000,
+    tableMaxRows: 15,
+    tableMaxCols: 9,
+    tableMaxCellChars: 160,
+  });
+  formulaErrors = await workbook.inspect({
+    kind: "match",
+    searchTerm: "#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A",
+    options: { useRegex: true, maxResults: 300 },
+    summary: "final formula error scan",
+  });
 
-const preview = await workbook.render({
-  sheetName: "Sheet1",
-  autoCrop: "all",
-  scale: 1,
-  format: "png",
-});
-await fs.writeFile(previewPath, new Uint8Array(await preview.arrayBuffer()));
+  const preview = await workbook.render({
+    sheetName: "Sheet1",
+    autoCrop: "all",
+    scale: 1,
+    format: "png",
+  });
+  await fs.writeFile(previewPath, new Uint8Array(await preview.arrayBuffer()));
 
-const output = await SpreadsheetFile.exportXlsx(workbook);
-await output.save(outputPath);
-await fs.rm(`${outputPath}.inspect.ndjson`, { force: true });
+  const output = await SpreadsheetFile.exportXlsx(workbook);
+  await output.save(outputPath);
+  await fs.rm(`${outputPath}.inspect.ndjson`, { force: true });
+}
 
 const combined = await buildCombinedWorkbook(mappingAllRows, mapped.rawRows, mapped.rows);
 const combinedChecks = {};
@@ -501,17 +515,19 @@ const combinedPreviewSpecs = {
   comparison: "A1:I20",
   status: "A1:I20",
 };
-for (const [key, item] of Object.entries(combined.sheets)) {
-  const preview = await combined.workbook.render({
-    sheetName: item.name,
-    range: combinedPreviewSpecs[key],
-    scale: 1,
-    format: "png",
-  });
-  await fs.writeFile(
-    combinedPreviewPaths[key],
-    new Uint8Array(await preview.arrayBuffer()),
-  );
+if (!archiveMode) {
+  for (const [key, item] of Object.entries(combined.sheets)) {
+    const preview = await combined.workbook.render({
+      sheetName: item.name,
+      range: combinedPreviewSpecs[key],
+      scale: 1,
+      format: "png",
+    });
+    await fs.writeFile(
+      combinedPreviewPaths[key],
+      new Uint8Array(await preview.arrayBuffer()),
+    );
+  }
 }
 
 const combinedOutput = await SpreadsheetFile.exportXlsx(combined.workbook);
@@ -519,6 +535,7 @@ await combinedOutput.save(combinedOutputPath);
 await fs.rm(`${combinedOutputPath}.inspect.ndjson`, { force: true });
 
 const validation = {
+  archiveMode,
   reportDate: targetDate,
   sourceMessages: statesForDate.length,
   comparisonRows: mapped.rawRows.length,
@@ -531,14 +548,17 @@ const validation = {
   june20ComparisonValidation,
   formulaErrorScan: formulaErrors.ndjson,
   combinedFormulaErrorScan: combinedFormulaErrors.ndjson,
-  outputPath,
+  outputPath: archiveMode ? null : outputPath,
   combinedOutputPath,
   combinedSheets: Object.fromEntries(
     Object.entries(combined.sheets).map(([key, item]) => [key, item.name]),
   ),
 };
-await fs.writeFile(validationPath, JSON.stringify(validation, null, 2), "utf8");
-
-console.log(tableCheck.ndjson);
-console.log(JSON.stringify(combinedChecks, null, 2));
-console.log(JSON.stringify(validation, null, 2));
+if (archiveMode) {
+  console.log(JSON.stringify(validation));
+} else {
+  await fs.writeFile(validationPath, JSON.stringify(validation, null, 2), "utf8");
+  console.log(tableCheck.ndjson);
+  console.log(JSON.stringify(combinedChecks, null, 2));
+  console.log(JSON.stringify(validation, null, 2));
+}

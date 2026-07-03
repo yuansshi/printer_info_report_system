@@ -79,7 +79,7 @@ node five_day_printer_report.mjs
 python3 update_printer_dashboard.py
 ```
 
-该命令检查从 `dashboard_config.json` 中 `start_date` 到昨天的全部日期，补抓缺失日，重抓最近 3 天，执行质量门禁并原子发布 `dashboard/data.js`。
+该命令检查从 `dashboard_config.json` 中 `start_date` 到昨天的全部日期，补抓缺失日，重抓最近 3 天，执行质量门禁，生成缺失或变化日期的 `data/daily_reports/YYYY-MM-DD/打印机信息汇总-YYYY-MM-DD.xlsx`，最后原子发布 `dashboard/data.js`。
 
 指定范围强制回填：
 
@@ -92,6 +92,8 @@ python3 update_printer_dashboard.py --from 2026-06-01 --to 2026-07-02 --force
 ```bash
 python3 update_printer_dashboard.py --rebuild-only
 ```
+
+该模式也会补齐缺失的每日 Excel。每个日期旁的 `manifest.json` 记录源 JSON、映射表、生成器和输出哈希；输入未变化时不会重复生成。输入变化时，旧工作簿和清单保存在 `data/daily_reports/revisions/YYYY-MM-DD/`。
 
 启动本地服务器：
 
@@ -117,6 +119,7 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory dashboard
 8. 每个页签均完成图片渲染检查，表头、换行和长文本没有遮挡。
 9. 最终 `.xlsx` 能重新导入并通过 ZIP 完整性检查。
 10. Dashboard 的每日分区连续、UID 唯一、状态 UID 均能找到源邮件，且 `latest-run.json` 为成功状态。
+11. `data/daily_reports/` 中每个完整日都有工作簿和清单，清单输出哈希与文件一致。
 
 ## 7. 常见问题
 
@@ -155,6 +158,7 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory dashboard
 
 - 邮箱读取流程不应执行移动、删除、标记已读或写入操作。
 - 每日分区内容变化前会进入 `data/printer_history/revisions/`，成功运行清单包含 SHA-256。
+- 每日 Excel 输入变化时，旧工作簿和清单会进入 `data/daily_reports/revisions/`。
 - Dashboard 构建失败时不替换上一版 `dashboard/data.js`。
 - 解析规则变更后，使用保存的 JSON 回放并与已验证日期比较。
 - 发布新版本前保留上一份工作簿和验证清单，以便回滚。

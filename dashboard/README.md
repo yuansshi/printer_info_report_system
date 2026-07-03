@@ -8,7 +8,7 @@
 python3 update_printer_dashboard.py
 ```
 
-该命令补齐缺失日期、重抓最近 3 个完整日、校验历史并原子替换 `dashboard/data.js`。仅从现有历史重建：
+该命令补齐缺失日期、重抓最近 3 个完整日、校验历史、生成缺失或变化日期的 `data/daily_reports/` Excel，并原子替换 `dashboard/data.js`。仅从现有历史重建：
 
 ```bash
 python3 update_printer_dashboard.py --rebuild-only

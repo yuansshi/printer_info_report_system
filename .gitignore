@@ -9,6 +9,7 @@ __pycache__/
 *.pyc
 .playwright-cli/
 data/printer_history/
+data/daily_reports/
 dashboard/data.js
 node_modules
 output/

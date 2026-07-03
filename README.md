@@ -17,6 +17,7 @@ Fuji Xerox/Fujifilm Business Innovation 打印机邮件采集、历史保存、E
 - 生成五日工作簿：每日状态页、设备信息汇总页和分析页。
 - 生成从 2026-06-01 开始的本地运营 Dashboard，支持日/周/月趋势、筛选、设备检索、告警、计费器和数据质量检查。
 - 按日期保存原始邮件与标准化状态，自动补缺口、保留变更版本并每日原子发布新快照。
+- 每个完整日自动生成原格式三页签 Excel，连同输入、映射、生成器和输出哈希保存到 `data/daily_reports/` 供日后核对。
 - 在导出前执行表格检查、公式错误扫描和图片渲染验证。
 
 ## 项目文件
@@ -32,6 +33,7 @@ Fuji Xerox/Fujifilm Business Innovation 打印机邮件采集、历史保存、E
 | `deploy/` | 远程 Linux systemd、Nginx 和环境配置示例 |
 | `dashboard/` | 本地运营 Dashboard、数据构建脚本和静态数据快照 |
 | `data/printer_history/` | 每日历史分区、运行清单、旧版本和日志；不提交源码仓库 |
+| `data/daily_reports/` | 按日期保存的三页签 Excel、生成清单和旧版本；不提交源码仓库 |
 | `workbook_analysis/` | 原始邮件 JSON、标准化 JSON、验证和预览文件 |
 | `outputs/` | 最终 Excel 产物 |
 
@@ -48,8 +50,9 @@ Fuji Xerox/Fujifilm Business Innovation 打印机邮件采集、历史保存、E
 ## Dashboard 数据基线
 
 - 历史起点：`2026-06-01`。
-- 当前已验证范围：`2026-06-01` 至 `2026-07-02`。
-- 4,178 封源邮件全部解析成功，覆盖 50 台设备。
+- 当前已验证范围：`2026-06-01` 至 `2026-07-03`。
+- 4,305 封源邮件全部解析成功，覆盖 50 台设备。
+- 33 个日期均已有可核对的 Excel 工作簿和 SHA-256 清单。
 - 日统计按上海自然日，周统计按周一至周日，月统计按自然月。
 - 自动更新只发布到昨天，避免把尚未结束的当天数据计为完整日。
 
@@ -93,6 +96,13 @@ outputs/printer_email_2026-07-02/打印机信息汇总-2026-07-02.xlsx
 python3 update_printer_dashboard.py
 ```
 
+该命令同时为缺失或输入发生变化的日期生成：
+
+```text
+data/daily_reports/YYYY-MM-DD/打印机信息汇总-YYYY-MM-DD.xlsx
+data/daily_reports/YYYY-MM-DD/manifest.json
+```
+
 本机文件位于其他目录时：
 
 ```bash
@@ -126,5 +136,5 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory dashboard
 
 - 邮箱凭据只保存在项目外部的 `.env` 中，不写入代码、日志或工作簿。
 - IMAP 使用只读方式打开 INBOX，并使用 `BODY.PEEK` 获取邮件。
-- 原始邮件可能包含客户、IP 地址和设备信息；`data/printer_history/`、`workbook_analysis/` 与 `outputs/` 应按内部数据处理，不应公开提交。
+- 原始邮件可能包含客户、IP 地址和设备信息；`data/printer_history/`、`data/daily_reports/`、`workbook_analysis/` 与 `outputs/` 应按内部数据处理，不应公开提交。
 - Git 仓库只保存程序、配置示例、测试和文档；本地历史、生成报表、浏览器验证产物和凭据由 `.gitignore` 排除。

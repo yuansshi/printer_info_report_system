@@ -6,6 +6,8 @@
   "history_dir": "data/printer_history/daily",
   "runs_dir": "data/printer_history/runs",
   "revisions_dir": "data/printer_history/revisions",
+  "daily_reports_dir": "data/daily_reports",
+  "daily_report_builder": "printer_email_report.mjs",
   "dashboard_builder": "dashboard/build_data.mjs",
   "dashboard_output": "dashboard/data.js",
   "refresh_overlap_days": 3,

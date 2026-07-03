@@ -14,6 +14,7 @@ import posixpath
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import time
 import xml.etree.ElementTree as ET
@@ -29,6 +30,7 @@ from retrieve_printer_mail import MailRecord, fetch_for_range, parse_printer_sta
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 DEFAULT_CONFIG = PROJECT_ROOT / "dashboard_config.json"
+DAILY_REPORT_SCHEMA_VERSION = 1
 
 
 def parse_args() -> argparse.Namespace:
@@ -58,16 +60,21 @@ def load_config(path: Path) -> dict[str, Any]:
     config_path = path.expanduser().resolve()
     config = json.loads(config_path.read_text(encoding="utf-8"))
     base = config_path.parent
+    config.setdefault("daily_reports_dir", "data/daily_reports")
+    config.setdefault("daily_report_builder", "printer_email_report.mjs")
     data_root = os.environ.get("PRINTER_DATA_ROOT")
     if data_root:
         config["history_dir"] = str(Path(data_root) / "daily")
         config["runs_dir"] = str(Path(data_root) / "runs")
         config["revisions_dir"] = str(Path(data_root) / "revisions")
+        config["daily_reports_dir"] = str(Path(data_root) / "daily_reports")
     path_overrides = {
         "env_file": "PRINTER_ENV_FILE",
         "mapping_path": "PRINTER_MAPPING_PATH",
         "dashboard_builder": "PRINTER_DASHBOARD_BUILDER",
         "dashboard_output": "PRINTER_DASHBOARD_OUTPUT",
+        "daily_reports_dir": "PRINTER_DAILY_REPORTS_DIR",
+        "daily_report_builder": "PRINTER_DAILY_REPORT_BUILDER",
     }
     for key, environment_name in path_overrides.items():
         if os.environ.get(environment_name):
@@ -88,6 +95,8 @@ def load_config(path: Path) -> dict[str, Any]:
         "revisions_dir",
         "dashboard_builder",
         "dashboard_output",
+        "daily_reports_dir",
+        "daily_report_builder",
     ):
         config[key] = resolve_path(config[key], base)
     config["config_path"] = config_path
@@ -413,10 +422,8 @@ def find_node(configured: str | None) -> str:
     raise FileNotFoundError("Node.js is required to rebuild dashboard/data.js")
 
 
-def rebuild_dashboard(config: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+def rebuild_dashboard(config: dict[str, Any], mapping_json: Path) -> dict[str, Any]:
     node = find_node(config.get("node_bin"))
-    mapping_json = config["history_dir"].parent / "mapping.json"
-    mapping = export_mapping_snapshot(config["mapping_path"], mapping_json)
     command = [
         node,
         str(config["dashboard_builder"]),
@@ -431,7 +438,157 @@ def rebuild_dashboard(config: dict[str, Any]) -> tuple[dict[str, Any], dict[str,
         capture_output=True,
         text=True,
     )
-    return json.loads(result.stdout), mapping
+    return json.loads(result.stdout)
+
+
+def daily_report_is_current(
+    manifest_path: Path,
+    output_path: Path,
+    expected_inputs: dict[str, Any],
+) -> bool:
+    if not manifest_path.is_file() or not output_path.is_file():
+        return False
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if manifest.get("schema_version") != DAILY_REPORT_SCHEMA_VERSION:
+            return False
+        if manifest.get("inputs") != expected_inputs:
+            return False
+        return manifest.get("output", {}).get("sha256") == sha256_file(output_path)
+    except (OSError, ValueError, TypeError, json.JSONDecodeError):
+        return False
+
+
+def generate_daily_reports(
+    config: dict[str, Any],
+    start: date,
+    end: date,
+    run_id: str,
+    mapping: dict[str, Any],
+) -> dict[str, Any]:
+    node = find_node(config.get("node_bin"))
+    builder: Path = config["daily_report_builder"]
+    reports_dir: Path = config["daily_reports_dir"]
+    history_dir: Path = config["history_dir"]
+    revisions_dir = reports_dir / "revisions"
+    builder_sha256 = sha256_file(builder)
+    generated: list[dict[str, Any]] = []
+    skipped: list[str] = []
+    reports_dir.mkdir(parents=True, exist_ok=True)
+    reports_dir.chmod(0o700)
+
+    for report_date in inclusive_dates(start, end):
+        date_text = report_date.isoformat()
+        mail_path = history_dir / f"mail-{date_text}.json"
+        states_path = history_dir / f"printer-states-{date_text}.json"
+        report_dir = reports_dir / date_text
+        output_path = report_dir / f"打印机信息汇总-{date_text}.xlsx"
+        manifest_path = report_dir / "manifest.json"
+        expected_inputs = {
+            "mail_sha256": sha256_file(mail_path),
+            "states_sha256": sha256_file(states_path),
+            "mapping_sha256": mapping["source_sha256"],
+            "builder_sha256": builder_sha256,
+        }
+        if daily_report_is_current(manifest_path, output_path, expected_inputs):
+            skipped.append(date_text)
+            print(f"Daily XLSX {date_text}: current", file=sys.stderr, flush=True)
+            continue
+
+        report_dir.mkdir(parents=True, exist_ok=True)
+        report_dir.chmod(0o700)
+        temporary_path = report_dir / f".{output_path.stem}.{run_id}.tmp.xlsx"
+        status_output_path = report_dir / f"打印机状态-{date_text}-00001.xlsx"
+        environment = os.environ.copy()
+        environment["PRINTER_ARCHIVE_MODE"] = "1"
+        environment["PRINTER_COMBINED_OUTPUT_PATH"] = str(temporary_path)
+        command = [
+            node,
+            str(builder),
+            date_text,
+            str(states_path),
+            str(config["mapping_path"]),
+            str(status_output_path),
+        ]
+        try:
+            result = subprocess.run(
+                command,
+                cwd=PROJECT_ROOT,
+                env=environment,
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            report_result = json.loads(result.stdout.strip().splitlines()[-1])
+            mail_count = len(read_json_array(mail_path))
+            states_count = len(read_json_array(states_path))
+            if report_result["comparisonRows"] != states_count:
+                raise RuntimeError(
+                    f"Daily XLSX {date_text} has {report_result['comparisonRows']} comparison "
+                    f"rows for {states_count} parsed states"
+                )
+            formula_scan = report_result["combinedFormulaErrorScan"]
+            if "matched 0 entries" not in formula_scan:
+                raise RuntimeError(f"Daily XLSX {date_text} contains formula errors")
+            if output_path.exists():
+                revision_dir = revisions_dir / date_text
+                revision_dir.mkdir(parents=True, exist_ok=True)
+                revision_dir.chmod(0o700)
+                shutil.copy2(output_path, revision_dir / f"{run_id}-{output_path.name}")
+                if manifest_path.exists():
+                    shutil.copy2(manifest_path, revision_dir / f"{run_id}-manifest.json")
+            os.replace(temporary_path, output_path)
+            output_path.chmod(0o600)
+        finally:
+            temporary_path.unlink(missing_ok=True)
+
+        report_manifest = {
+            "schema_version": DAILY_REPORT_SCHEMA_VERSION,
+            "date": date_text,
+            "run_id": run_id,
+            "generated_at": datetime.now(ZoneInfo(config["timezone"])).isoformat(),
+            "inputs": expected_inputs,
+            "source": {
+                "mail_path": str(mail_path),
+                "states_path": str(states_path),
+                "mapping_path": str(config["mapping_path"]),
+            },
+            "workbook": {
+                "source_messages": mail_count,
+                "parsed_states": states_count,
+                "comparison_rows": report_result["comparisonRows"],
+                "status_rows": report_result["outputRows"],
+                "unique_serials": report_result["uniqueSerials"],
+                "missing_serials": report_result["missingSerials"],
+                "missing_locations": report_result["missingLocations"],
+                "mapping_duplicates": report_result["mappingDuplicates"],
+                "sheets": report_result["combinedSheets"],
+                "formula_error_scan": formula_scan,
+            },
+            "output": {
+                "path": str(output_path),
+                "sha256": sha256_file(output_path),
+                "size_bytes": output_path.stat().st_size,
+            },
+        }
+        atomic_write_json(manifest_path, report_manifest)
+        generated.append(
+            {
+                "date": date_text,
+                "path": str(output_path),
+                "mail": mail_count,
+                "status_rows": report_result["outputRows"],
+                "sha256": report_manifest["output"]["sha256"],
+            }
+        )
+        print(f"Daily XLSX {date_text}: generated", file=sys.stderr, flush=True)
+
+    return {
+        "directory": str(reports_dir),
+        "dates": len(inclusive_dates(start, end)),
+        "generated": generated,
+        "skipped": skipped,
+    }
 
 
 def selected_fetch_dates(
@@ -546,7 +703,10 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     if errors:
         raise RuntimeError("; ".join(errors[:20]))
 
-    dashboard, mapping = rebuild_dashboard(config)
+    mapping_json = history_dir.parent / "mapping.json"
+    mapping = export_mapping_snapshot(config["mapping_path"], mapping_json)
+    daily_reports = generate_daily_reports(config, start, end, run_id, mapping)
+    dashboard = rebuild_dashboard(config, mapping_json)
     completed = datetime.now(timezone)
     manifest = {
         "run_id": run_id,
@@ -559,6 +719,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "fetched_partitions": fetched_partitions,
         "validation": validation,
         "mapping": mapping,
+        "daily_reports": daily_reports,
         "dashboard": dashboard,
     }
     runs_dir.mkdir(parents=True, exist_ok=True)
@@ -594,6 +755,7 @@ def main() -> int:
                 "mail": result["validation"]["mail"],
                 "states": result["validation"]["states"],
                 "parse_rate": result["validation"]["parse_rate"],
+                "daily_reports": result["daily_reports"],
                 "dashboard": result["dashboard"],
             },
             ensure_ascii=False,

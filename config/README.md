@@ -22,4 +22,4 @@ sina_imap_authorization_code=replace-with-runtime-secret
 sina_url=https://mail.sina.com.cn/
 ```
 
-Runtime workbooks and credentials are excluded from Git. Production deployments should store them outside the application checkout and use `PRINTER_ENV_FILE`, `PRINTER_MAPPING_PATH`, `PRINTER_COMPARISON_PATH`, and `PRINTER_REFERENCE_STATUS_PATH` as needed.
+Runtime workbooks and credentials are excluded from Git. Production deployments should store them outside the application checkout and use `PRINTER_ENV_FILE`, `PRINTER_MAPPING_PATH`, `PRINTER_COMPARISON_PATH`, and `PRINTER_REFERENCE_STATUS_PATH` as needed. Daily audit output can be relocated with `PRINTER_DAILY_REPORTS_DIR`; the default is `data/daily_reports/`.
