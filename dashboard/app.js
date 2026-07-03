@@ -789,7 +789,11 @@
       elements.searchInput.value = "";
       render();
     });
-    document.querySelector("#refresh-button").addEventListener("click", () => window.location.reload());
+    document.querySelector("#refresh-button").addEventListener("click", () => {
+      const url = new URL(window.location.href);
+      url.searchParams.set("refresh", Date.now().toString());
+      window.location.replace(url);
+    });
     document.querySelector("#export-button").addEventListener("click", exportCsv);
     document.querySelectorAll("[data-sort]").forEach((button) => {
       button.addEventListener("click", () => {

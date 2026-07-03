@@ -149,7 +149,7 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory dashboard
 - 查看 `data/printer_history/logs/stderr.log` 和 `last-failed-run.json`。
 - 运行 `python3 update_printer_dashboard.py`，检查缺失日期、登录或解析率错误。
 - 只需要重新发布时运行 `python3 update_printer_dashboard.py --rebuild-only`。
-- 浏览器强制刷新，避免继续使用旧的 `data.js` 缓存。
+- 点击 Dashboard 工具栏刷新按钮；页面会为 `data.js` 使用一次性版本参数，避免继续使用旧缓存或恢复旧日期筛选。
 
 ## 8. 安全和回滚
 
