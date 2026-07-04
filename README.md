@@ -32,8 +32,8 @@ Fuji Xerox/Fujifilm Business Innovation 打印机邮件采集、历史保存、E
 | `dashboard_config.json` | Dashboard 起始日期、历史目录、映射表和更新参数 |
 | `deploy/` | 远程 Linux systemd、Nginx 和环境配置示例 |
 | `dashboard/` | 本地运营 Dashboard、数据构建脚本和静态数据快照 |
-| `data/printer_history/` | 每日历史分区、运行清单、旧版本和日志；不提交源码仓库 |
-| `data/daily_reports/` | 按日期保存的三页签 Excel、生成清单和旧版本；不提交源码仓库 |
+| `data/printer_history/` | 每日历史分区、运行清单、旧版本和日志；提交仓库作为审计数据 |
+| `data/daily_reports/` | 按日期保存的三页签 Excel、生成清单和旧版本；提交仓库作为审计数据 |
 | `workbook_analysis/` | 原始邮件 JSON、标准化 JSON、验证和预览文件 |
 | `outputs/` | 最终 Excel 产物 |
 
@@ -136,5 +136,5 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory dashboard
 
 - 邮箱凭据只保存在项目外部的 `.env` 中，不写入代码、日志或工作簿。
 - IMAP 使用只读方式打开 INBOX，并使用 `BODY.PEEK` 获取邮件。
-- 原始邮件可能包含客户、IP 地址和设备信息；`data/printer_history/`、`data/daily_reports/`、`workbook_analysis/` 与 `outputs/` 应按内部数据处理，不应公开提交。
-- Git 仓库只保存程序、配置示例、测试和文档；本地历史、生成报表、浏览器验证产物和凭据由 `.gitignore` 排除。
+- 原始邮件及每日 Excel 包含客户、邮箱、IP 地址、位置和设备信息；`data/printer_history/` 与 `data/daily_reports/` 按用户要求提交仓库用于审计，因此仓库应设为私有或实施等效访问控制。
+- 凭据、`config/*.xlsx`、Dashboard 发布快照、浏览器验证产物和临时锁仍由 `.gitignore` 排除。

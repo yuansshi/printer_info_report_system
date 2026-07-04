@@ -1,0 +1,1742 @@
+[
+  {
+    "uid": "227457",
+    "timestamp": "2026-06-22T21:23:55+08:00",
+    "model": "Apeos 5570",
+    "serial": "212573",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生以下错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227455",
+    "timestamp": "2026-06-22T18:36:50+08:00",
+    "model": "Apeos C2060",
+    "serial": "393672",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生卡纸。",
+    "billing_meter": null
+  },
+  {
+    "uid": "227454",
+    "timestamp": "2026-06-22T18:26:26+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227453",
+    "timestamp": "2026-06-22T18:26:24+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227452",
+    "timestamp": "2026-06-22T18:26:22+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227451",
+    "timestamp": "2026-06-22T18:26:21+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227450",
+    "timestamp": "2026-06-22T18:13:33+08:00",
+    "model": "ApeosPort C2060",
+    "serial": "240887",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227449",
+    "timestamp": "2026-06-22T17:59:29+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227448",
+    "timestamp": "2026-06-22T17:59:27+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227447",
+    "timestamp": "2026-06-22T17:59:25+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227445",
+    "timestamp": "2026-06-22T17:49:41+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227444",
+    "timestamp": "2026-06-22T17:49:38+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227443",
+    "timestamp": "2026-06-22T17:49:37+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227442",
+    "timestamp": "2026-06-22T17:49:35+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227441",
+    "timestamp": "2026-06-22T17:28:03+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。品红色墨粉盒     < 尽快更换 >废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227440",
+    "timestamp": "2026-06-22T17:22:43+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227439",
+    "timestamp": "2026-06-22T17:22:41+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227438",
+    "timestamp": "2026-06-22T17:22:39+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227437",
+    "timestamp": "2026-06-22T17:22:37+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227436",
+    "timestamp": "2026-06-22T17:10:56+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227435",
+    "timestamp": "2026-06-22T17:10:54+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227434",
+    "timestamp": "2026-06-22T17:10:52+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227433",
+    "timestamp": "2026-06-22T17:10:51+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227432",
+    "timestamp": "2026-06-22T17:07:30+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。品红色墨粉盒     < 尽快更换 >废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227431",
+    "timestamp": "2026-06-22T17:07:27+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。品红色墨粉盒     < 尽快更换 >废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227430",
+    "timestamp": "2026-06-22T17:07:24+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。品红色墨粉盒     < 尽快更换 >废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227429",
+    "timestamp": "2026-06-22T17:07:21+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227428",
+    "timestamp": "2026-06-22T16:59:45+08:00",
+    "model": "ApeosPort C5570",
+    "serial": "736662",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227426",
+    "timestamp": "2026-06-22T16:54:10+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227425",
+    "timestamp": "2026-06-22T16:42:45+08:00",
+    "model": "ApeosPort 3560",
+    "serial": "883852",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227424",
+    "timestamp": "2026-06-22T16:41:13+08:00",
+    "model": "Apeos C3570",
+    "serial": "342451",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "The following error has occurred.Tray 1     < Tray open >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227418",
+    "timestamp": "2026-06-22T16:36:35+08:00",
+    "model": "Apeos C3571",
+    "serial": "454206",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生以下错误。纸盘2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227416",
+    "timestamp": "2026-06-22T16:34:11+08:00",
+    "model": "Apeos C3571",
+    "serial": "454206",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生以下错误。纸盘2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227423",
+    "timestamp": "2026-06-22T16:32:51+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227422",
+    "timestamp": "2026-06-22T16:32:50+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227421",
+    "timestamp": "2026-06-22T16:32:48+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227420",
+    "timestamp": "2026-06-22T16:32:46+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227413",
+    "timestamp": "2026-06-22T16:01:05+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955219",
+    "consumables": "发生下列错误。黄色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227412",
+    "timestamp": "2026-06-22T16:00:35+08:00",
+    "model": "Apeos C3570",
+    "serial": "342460",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "The following error has occurred.Tray 1     < Tray open >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227411",
+    "timestamp": "2026-06-22T15:45:23+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227410",
+    "timestamp": "2026-06-22T15:45:21+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227409",
+    "timestamp": "2026-06-22T15:45:19+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227408",
+    "timestamp": "2026-06-22T15:45:17+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227407",
+    "timestamp": "2026-06-22T15:38:39+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227406",
+    "timestamp": "2026-06-22T15:38:37+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227405",
+    "timestamp": "2026-06-22T15:38:35+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227402",
+    "timestamp": "2026-06-22T15:29:49+08:00",
+    "model": "ApeosPort C3570",
+    "serial": "717205",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227395",
+    "timestamp": "2026-06-22T15:28:31+08:00",
+    "model": "Apeos C3570",
+    "serial": "342460",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "The following error has occurred.Tray 1     < Tray open >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227399",
+    "timestamp": "2026-06-22T15:28:06+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227400",
+    "timestamp": "2026-06-22T15:28:04+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227398",
+    "timestamp": "2026-06-22T15:28:03+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227390",
+    "timestamp": "2026-06-22T15:19:48+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955219",
+    "consumables": "发生下列错误。黄色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227394",
+    "timestamp": "2026-06-22T15:18:36+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227392",
+    "timestamp": "2026-06-22T15:18:34+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227393",
+    "timestamp": "2026-06-22T15:18:32+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227391",
+    "timestamp": "2026-06-22T15:18:31+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227387",
+    "timestamp": "2026-06-22T15:08:21+08:00",
+    "model": "Apeos C3570",
+    "serial": "342457",
+    "consumables": "发生以下错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227386",
+    "timestamp": "2026-06-22T15:08:12+08:00",
+    "model": "Apeos C3570",
+    "serial": "342457",
+    "consumables": "发生以下错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": "发生以下错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227388",
+    "timestamp": "2026-06-22T15:04:41+08:00",
+    "model": "Apeos C3070",
+    "serial": "340640",
+    "consumables": "发生以下错误。黄色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": "发生以下错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227384",
+    "timestamp": "2026-06-22T14:54:15+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227383",
+    "timestamp": "2026-06-22T14:54:12+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227382",
+    "timestamp": "2026-06-22T14:54:10+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227380",
+    "timestamp": "2026-06-22T14:44:12+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227379",
+    "timestamp": "2026-06-22T14:44:10+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227378",
+    "timestamp": "2026-06-22T14:44:08+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227376",
+    "timestamp": "2026-06-22T14:41:41+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227375",
+    "timestamp": "2026-06-22T14:35:57+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227374",
+    "timestamp": "2026-06-22T14:35:56+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227373",
+    "timestamp": "2026-06-22T14:35:54+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227369",
+    "timestamp": "2026-06-22T14:35:42+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。黑色墨粉盒     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227368",
+    "timestamp": "2026-06-22T14:35:41+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。青色感光鼓     < 未安装 >品红色墨粉盒     < 未安装 >黑色墨粉盒     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227367",
+    "timestamp": "2026-06-22T14:24:54+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227366",
+    "timestamp": "2026-06-22T14:24:52+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227365",
+    "timestamp": "2026-06-22T14:24:51+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227364",
+    "timestamp": "2026-06-22T14:24:49+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227363",
+    "timestamp": "2026-06-22T14:23:16+08:00",
+    "model": "ApeosPort C2060",
+    "serial": "240906",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227362",
+    "timestamp": "2026-06-22T14:19:09+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。青色感光鼓     < 未安装 >黄色墨粉盒     < 未安装 >品红色墨粉盒     < 未安装 >黑色墨粉盒     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227357",
+    "timestamp": "2026-06-22T14:17:14+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。青色感光鼓     < 未安装 >黄色墨粉盒     < 未安装 >品红色墨粉盒     < 未安装 >黑色墨粉盒     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227356",
+    "timestamp": "2026-06-22T14:17:12+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。青色感光鼓     < 未安装 >黄色墨粉盒     < 未安装 >品红色墨粉盒     < 未安装 >黑色墨粉盒     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227355",
+    "timestamp": "2026-06-22T14:17:11+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。青色感光鼓     < 未安装 >黄色墨粉盒     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227354",
+    "timestamp": "2026-06-22T14:16:50+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。青色感光鼓     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227361",
+    "timestamp": "2026-06-22T14:14:34+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227360",
+    "timestamp": "2026-06-22T14:14:33+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227359",
+    "timestamp": "2026-06-22T14:14:31+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227358",
+    "timestamp": "2026-06-22T14:14:29+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227352",
+    "timestamp": "2026-06-22T14:13:44+08:00",
+    "model": "ApeosPort C5570",
+    "serial": "709551",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227350",
+    "timestamp": "2026-06-22T14:11:18+08:00",
+    "model": "Apeos C3570",
+    "serial": "342890",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生以下错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227351",
+    "timestamp": "2026-06-22T14:08:31+08:00",
+    "model": "ApeosPort C2060",
+    "serial": "240905",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227348",
+    "timestamp": "2026-06-22T14:06:48+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955219",
+    "consumables": "发生下列错误。黄色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227346",
+    "timestamp": "2026-06-22T14:02:15+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。黑色墨粉盒     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227344",
+    "timestamp": "2026-06-22T14:01:35+08:00",
+    "model": "ApeosPort-VII C3373",
+    "serial": "313398",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘 1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227345",
+    "timestamp": "2026-06-22T14:00:17+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227342",
+    "timestamp": "2026-06-22T13:58:36+08:00",
+    "model": "ApeosPort-VII C3373",
+    "serial": "313398",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘 2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227341",
+    "timestamp": "2026-06-22T13:57:00+08:00",
+    "model": "ApeosPort-VII C3373",
+    "serial": "313398",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘 1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227343",
+    "timestamp": "2026-06-22T13:48:52+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227340",
+    "timestamp": "2026-06-22T13:42:34+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227329",
+    "timestamp": "2026-06-22T13:40:33+08:00",
+    "model": "ApeosPort-VII C3373",
+    "serial": "313398",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘 2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227339",
+    "timestamp": "2026-06-22T13:39:50+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >黑色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227338",
+    "timestamp": "2026-06-22T13:39:44+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227337",
+    "timestamp": "2026-06-22T13:39:42+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227336",
+    "timestamp": "2026-06-22T13:39:40+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227332",
+    "timestamp": "2026-06-22T13:30:54+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227333",
+    "timestamp": "2026-06-22T13:30:52+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227331",
+    "timestamp": "2026-06-22T13:30:50+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227324",
+    "timestamp": "2026-06-22T13:12:23+08:00",
+    "model": "Apeos C3570",
+    "serial": "342457",
+    "consumables": "发生以下错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227323",
+    "timestamp": "2026-06-22T13:12:13+08:00",
+    "model": "Apeos C3570",
+    "serial": "342457",
+    "consumables": "发生以下错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": "发生以下错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227328",
+    "timestamp": "2026-06-22T13:11:13+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227327",
+    "timestamp": "2026-06-22T13:11:12+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227326",
+    "timestamp": "2026-06-22T13:11:10+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227325",
+    "timestamp": "2026-06-22T13:11:08+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227322",
+    "timestamp": "2026-06-22T13:09:48+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。品红色墨粉盒     < 尽快更换 >废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227321",
+    "timestamp": "2026-06-22T13:09:44+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。品红色墨粉盒     < 尽快更换 >废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227320",
+    "timestamp": "2026-06-22T13:09:40+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。品红色墨粉盒     < 尽快更换 >废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227319",
+    "timestamp": "2026-06-22T13:09:36+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227317",
+    "timestamp": "2026-06-22T12:55:23+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227316",
+    "timestamp": "2026-06-22T12:55:21+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227315",
+    "timestamp": "2026-06-22T12:55:19+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227313",
+    "timestamp": "2026-06-22T12:40:07+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955219",
+    "consumables": "发生下列错误。黄色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227311",
+    "timestamp": "2026-06-22T12:33:49+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227310",
+    "timestamp": "2026-06-22T12:33:47+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227309",
+    "timestamp": "2026-06-22T12:33:45+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227306",
+    "timestamp": "2026-06-22T12:20:49+08:00",
+    "model": "ApeosPort C2060",
+    "serial": "240874",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227307",
+    "timestamp": "2026-06-22T12:17:12+08:00",
+    "model": "ApeosPort C3070",
+    "serial": "707038",
+    "consumables": null,
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227302",
+    "timestamp": "2026-06-22T12:04:46+08:00",
+    "model": "ApeosPort C3070",
+    "serial": "707038",
+    "consumables": null,
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227304",
+    "timestamp": "2026-06-22T12:02:59+08:00",
+    "model": "Apeos C2060",
+    "serial": "393301",
+    "consumables": null,
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": "计费器[1]    9864计费器[2]    422676计费器[3]    27计费器[4]    432540计费器[5]    0"
+  },
+  {
+    "uid": "227303",
+    "timestamp": "2026-06-22T12:02:56+08:00",
+    "model": "Apeos C2060",
+    "serial": "393301",
+    "consumables": "没有需要通知的错误。",
+    "service_parts": "没有需要通知的错误。没有需要通知的错误。",
+    "fault": "没有需要通知的错误。",
+    "billing_meter": null
+  },
+  {
+    "uid": "227305",
+    "timestamp": "2026-06-22T12:02:29+08:00",
+    "model": "ApeosPort C5570",
+    "serial": "709551",
+    "consumables": null,
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": "计费器[1]    372264计费器[2]    171921计费器[3]    16661计费器[4]    544185计费器[5]    0"
+  },
+  {
+    "uid": "227301",
+    "timestamp": "2026-06-22T12:02:18+08:00",
+    "model": "ApeosPort C5570",
+    "serial": "709800",
+    "consumables": null,
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": "计费器[1]    115418计费器[2]    98109计费器[3]    2632计费器[4]    213527计费器[5]    0"
+  },
+  {
+    "uid": "227298",
+    "timestamp": "2026-06-22T11:42:07+08:00",
+    "model": "Apeos C3571",
+    "serial": "454206",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生以下错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227300",
+    "timestamp": "2026-06-22T11:38:59+08:00",
+    "model": "ApeosPort C5570",
+    "serial": "736662",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227297",
+    "timestamp": "2026-06-22T11:35:25+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227296",
+    "timestamp": "2026-06-22T11:35:23+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227295",
+    "timestamp": "2026-06-22T11:35:21+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227293",
+    "timestamp": "2026-06-22T11:22:10+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227292",
+    "timestamp": "2026-06-22T11:22:08+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227291",
+    "timestamp": "2026-06-22T11:22:07+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227288",
+    "timestamp": "2026-06-22T11:03:57+08:00",
+    "model": "ApeosPort 3560",
+    "serial": "883852",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227285",
+    "timestamp": "2026-06-22T10:53:14+08:00",
+    "model": "Apeos C2060",
+    "serial": "393672",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生以下错误。纸盘2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227281",
+    "timestamp": "2026-06-22T10:47:00+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": "发生下列错误。青色感光鼓     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227280",
+    "timestamp": "2026-06-22T10:46:56+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227279",
+    "timestamp": "2026-06-22T10:46:05+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": "发生下列错误。黑色墨粉盒     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227278",
+    "timestamp": "2026-06-22T10:46:03+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": "发生下列错误。青色感光鼓     < 未安装 >黑色墨粉盒     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227277",
+    "timestamp": "2026-06-22T10:45:40+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": "发生下列错误。青色感光鼓     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227276",
+    "timestamp": "2026-06-22T10:45:38+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227286",
+    "timestamp": "2026-06-22T10:44:55+08:00",
+    "model": "ApeosPort-VII C5573",
+    "serial": "346260",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227275",
+    "timestamp": "2026-06-22T10:44:06+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": "发生下列错误。黑色墨粉盒     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227274",
+    "timestamp": "2026-06-22T10:44:04+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": "发生下列错误。黑色墨粉盒     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227273",
+    "timestamp": "2026-06-22T10:44:02+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": "发生下列错误。青色感光鼓     < 未安装 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227283",
+    "timestamp": "2026-06-22T10:43:17+08:00",
+    "model": "ApeosPort C3570",
+    "serial": "717205",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227282",
+    "timestamp": "2026-06-22T10:42:41+08:00",
+    "model": "ApeosPort 3560",
+    "serial": "883852",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227271",
+    "timestamp": "2026-06-22T10:39:38+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227272",
+    "timestamp": "2026-06-22T10:39:36+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227270",
+    "timestamp": "2026-06-22T10:39:35+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。品红色墨粉盒     < 尽快更换 >青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227269",
+    "timestamp": "2026-06-22T10:39:33+08:00",
+    "model": "ApeosPort C2560",
+    "serial": "253235",
+    "consumables": "发生下列错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227268",
+    "timestamp": "2026-06-22T10:39:12+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227267",
+    "timestamp": "2026-06-22T10:30:49+08:00",
+    "model": "ApeosPort C2060",
+    "serial": "240906",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227266",
+    "timestamp": "2026-06-22T10:22:34+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 现在更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227263",
+    "timestamp": "2026-06-22T10:19:33+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": "发生下列错误。黑色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227262",
+    "timestamp": "2026-06-22T10:14:39+08:00",
+    "model": "Apeos C3570",
+    "serial": "342451",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "The following error has occurred.Tray 2     < Tray open >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227265",
+    "timestamp": "2026-06-22T10:14:13+08:00",
+    "model": "ApeosPort-VII C5573",
+    "serial": "346260",
+    "consumables": "发生下列错误。黑色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227259",
+    "timestamp": "2026-06-22T10:09:33+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955213",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘2     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227260",
+    "timestamp": "2026-06-22T10:04:33+08:00",
+    "model": "ApeosPort 3560",
+    "serial": "883852",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227258",
+    "timestamp": "2026-06-22T10:03:35+08:00",
+    "model": "ApeosPort C3070",
+    "serial": "707038",
+    "consumables": null,
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227256",
+    "timestamp": "2026-06-22T09:58:58+08:00",
+    "model": "ApeosPort C2060",
+    "serial": "240895",
+    "consumables": null,
+    "service_parts": null,
+    "fault": "发生下列错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227255",
+    "timestamp": "2026-06-22T09:45:57+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。品红色墨粉盒     < 尽快更换 >废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227254",
+    "timestamp": "2026-06-22T09:45:53+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。品红色墨粉盒     < 尽快更换 >废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227253",
+    "timestamp": "2026-06-22T09:45:50+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。品红色墨粉盒     < 尽快更换 >废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227252",
+    "timestamp": "2026-06-22T09:45:46+08:00",
+    "model": "Apeos C3570",
+    "serial": "341157",
+    "consumables": "发生以下错误。废粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227251",
+    "timestamp": "2026-06-22T09:26:50+08:00",
+    "model": "Apeos C3570",
+    "serial": "342457",
+    "consumables": "发生以下错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227250",
+    "timestamp": "2026-06-22T09:26:38+08:00",
+    "model": "Apeos C3570",
+    "serial": "342457",
+    "consumables": "发生以下错误。青色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": "发生以下错误。纸盘1     < 纸盘开着 >",
+    "billing_meter": null
+  },
+  {
+    "uid": "227249",
+    "timestamp": "2026-06-22T09:04:36+08:00",
+    "model": "Apeos C3070",
+    "serial": "340640",
+    "consumables": "发生以下错误。黄色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227248",
+    "timestamp": "2026-06-22T08:52:38+08:00",
+    "model": "ApeosPort-VII C5573",
+    "serial": "346260",
+    "consumables": "发生下列错误。黑色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227243",
+    "timestamp": "2026-06-22T08:28:12+08:00",
+    "model": "ApeosPort C3060",
+    "serial": "955219",
+    "consumables": "发生下列错误。黄色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  },
+  {
+    "uid": "227245",
+    "timestamp": "2026-06-22T08:27:58+08:00",
+    "model": "ApeosPort-VII C5573",
+    "serial": "346260",
+    "consumables": "发生下列错误。黑色墨粉盒     < 尽快更换 >",
+    "service_parts": null,
+    "fault": null,
+    "billing_meter": null
+  }
+]

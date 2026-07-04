@@ -56,6 +56,14 @@ def resolve_path(value: str, base: Path) -> Path:
     return path if path.is_absolute() else (base / path).resolve()
 
 
+def manifest_path(path: Path) -> str:
+    resolved = path.expanduser().resolve()
+    try:
+        return resolved.relative_to(PROJECT_ROOT).as_posix()
+    except ValueError:
+        return resolved.name
+
+
 def load_config(path: Path) -> dict[str, Any]:
     config_path = path.expanduser().resolve()
     config = json.loads(config_path.read_text(encoding="utf-8"))
@@ -250,7 +258,7 @@ def export_mapping_snapshot(source: Path, output: Path) -> dict[str, Any]:
     }
     atomic_write_json(output, payload)
     return {
-        "source": str(source),
+        "source": manifest_path(source),
         "rows": len(data_rows),
         "source_sha256": payload["source_sha256"],
         "snapshot": str(output),
@@ -438,7 +446,9 @@ def rebuild_dashboard(config: dict[str, Any], mapping_json: Path) -> dict[str, A
         capture_output=True,
         text=True,
     )
-    return json.loads(result.stdout)
+    dashboard = json.loads(result.stdout)
+    dashboard["outputPath"] = manifest_path(config["dashboard_output"])
+    return dashboard
 
 
 def daily_report_is_current(
@@ -549,9 +559,9 @@ def generate_daily_reports(
             "generated_at": datetime.now(ZoneInfo(config["timezone"])).isoformat(),
             "inputs": expected_inputs,
             "source": {
-                "mail_path": str(mail_path),
-                "states_path": str(states_path),
-                "mapping_path": str(config["mapping_path"]),
+                "mail_path": manifest_path(mail_path),
+                "states_path": manifest_path(states_path),
+                "mapping_path": manifest_path(config["mapping_path"]),
             },
             "workbook": {
                 "source_messages": mail_count,
@@ -566,7 +576,7 @@ def generate_daily_reports(
                 "formula_error_scan": formula_scan,
             },
             "output": {
-                "path": str(output_path),
+                "path": manifest_path(output_path),
                 "sha256": sha256_file(output_path),
                 "size_bytes": output_path.stat().st_size,
             },
@@ -575,7 +585,7 @@ def generate_daily_reports(
         generated.append(
             {
                 "date": date_text,
-                "path": str(output_path),
+                "path": manifest_path(output_path),
                 "mail": mail_count,
                 "status_rows": report_result["outputRows"],
                 "sha256": report_manifest["output"]["sha256"],
@@ -584,7 +594,7 @@ def generate_daily_reports(
         print(f"Daily XLSX {date_text}: generated", file=sys.stderr, flush=True)
 
     return {
-        "directory": str(reports_dir),
+        "directory": manifest_path(reports_dir),
         "dates": len(inclusive_dates(start, end)),
         "generated": generated,
         "skipped": skipped,

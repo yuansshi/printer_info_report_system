@@ -1,0 +1,113 @@
+{
+  "run_id": "20260704T014814+0800",
+  "status": "success",
+  "started_at": "2026-07-04T01:48:14.718262+08:00",
+  "completed_at": "2026-07-04T01:48:27.306931+08:00",
+  "source": "saved history",
+  "timezone": "Asia/Shanghai",
+  "fetch_ranges": [],
+  "fetched_partitions": [],
+  "validation": {
+    "start": "2026-07-03",
+    "end": "2026-07-03",
+    "days": 1,
+    "mail": 127,
+    "states": 127,
+    "parse_rate": 1.0,
+    "daily": [
+      {
+        "date": "2026-07-03",
+        "mail": 127,
+        "states": 127,
+        "mail_sha256": "e48cafec2925b478170fc88a345a17c778472b76ff4f021823fe9c95029dcf34",
+        "states_sha256": "4f265a14d5ba5564646391e6f1b0e10e59b7b3d1c0f2bd466f1a8af8a0490245"
+      }
+    ]
+  },
+  "mapping": {
+    "source": "config/客户名称机身编号映射表.xlsx",
+    "rows": 112,
+    "source_sha256": "44f1f5745db4e1143fba248e7ffa2f1867955305c3f972fa6af940711237e1b5",
+    "snapshot": "./data/printer_history/mapping.json",
+    "snapshot_sha256": "d28cda743b7625d28992fbe4b0d91d422bb6d3c00e631356d3854bc370a8ecac"
+  },
+  "daily_reports": {
+    "directory": "./data/daily_reports",
+    "dates": 1,
+    "generated": [
+      {
+        "date": "2026-07-03",
+        "path": "./data/daily_reports/2026-07-03/打印机信息汇总-2026-07-03.xlsx",
+        "mail": 127,
+        "status_rows": 35,
+        "sha256": "d096db48792b9a98a8693b6f341833dd2753760b742c8f40bdcb7c07577c20aa"
+      }
+    ],
+    "skipped": []
+  },
+  "dashboard": {
+    "outputPath": "./dashboard/data.js",
+    "dates": [
+      "2026-06-01",
+      "2026-06-02",
+      "2026-06-03",
+      "2026-06-04",
+      "2026-06-05",
+      "2026-06-06",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-09",
+      "2026-06-10",
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-06-15",
+      "2026-06-16",
+      "2026-06-17",
+      "2026-06-18",
+      "2026-06-19",
+      "2026-06-20",
+      "2026-06-21",
+      "2026-06-22",
+      "2026-06-23",
+      "2026-06-24",
+      "2026-06-25",
+      "2026-06-26",
+      "2026-06-27",
+      "2026-06-28",
+      "2026-06-29",
+      "2026-06-30",
+      "2026-07-01",
+      "2026-07-02",
+      "2026-07-03"
+    ],
+    "days": 33,
+    "notifications": 4305,
+    "devices": 50,
+    "alerts": 1060,
+    "meterRecords": 85,
+    "unknownSerials": [
+      "707038"
+    ],
+    "missingLocationSerials": [
+      "213905",
+      "213909",
+      "253235",
+      "340595",
+      "340640",
+      "393301",
+      "393672",
+      "674176",
+      "704008",
+      "704013",
+      "736631",
+      "736662",
+      "736989"
+    ],
+    "duplicateMappings": [
+      "132423",
+      "709800"
+    ]
+  }
+}

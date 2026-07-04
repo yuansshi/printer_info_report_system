@@ -15,6 +15,7 @@ from update_printer_dashboard import (
     contiguous_ranges,
     daily_report_is_current,
     load_config,
+    manifest_path,
     selected_fetch_dates,
     update_lock,
     validate_history,
@@ -153,6 +154,11 @@ class DashboardUpdateTests(unittest.TestCase):
 
             output.write_bytes(b"changed")
             self.assertFalse(daily_report_is_current(manifest, output, inputs))
+
+    def test_manifest_path_is_portable(self) -> None:
+        project_file = Path(__file__).resolve()
+        self.assertEqual(manifest_path(project_file), "tests/test_update_printer_dashboard.py")
+        self.assertEqual(manifest_path(Path("/tmp/external-mapping.xlsx")), "external-mapping.xlsx")
 
 
 if __name__ == "__main__":

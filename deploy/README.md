@@ -40,4 +40,4 @@ The Nginx example listens only on `127.0.0.1:8080`. Put authentication and TLS i
 
 For containers or Kubernetes, invoke the same update command from a CronJob and mount persistent volumes at the history and web-output paths.
 
-Daily audit workbooks are stored at `/var/lib/printer-dashboard/daily_reports/YYYY-MM-DD/`. Back up this directory together with `/var/lib/printer-dashboard/history/`; neither directory belongs in the source repository.
+Daily audit workbooks are stored at `/var/lib/printer-dashboard/daily_reports/YYYY-MM-DD/`. Back up this directory together with `/var/lib/printer-dashboard/history/`. This project tracks synchronized snapshots of both directories by explicit policy; keep the repository access-controlled because those files contain customer and device data.

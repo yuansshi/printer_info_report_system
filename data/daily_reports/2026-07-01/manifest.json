@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "date": "2026-07-01",
+  "run_id": "20260704T014936+0800",
+  "generated_at": "2026-07-04T01:55:25.081852+08:00",
+  "inputs": {
+    "mail_sha256": "c2f2c73ae840845e1c692452a33b7b7ef2a715f211db9659765e3bf2a9725edd",
+    "states_sha256": "af91c439c36ba8f5389ee19d7d8b0c5b567d0d61ddd456cf67ed23a1b18e7291",
+    "mapping_sha256": "44f1f5745db4e1143fba248e7ffa2f1867955305c3f972fa6af940711237e1b5",
+    "builder_sha256": "e78e7b5b3e3326787fa2ffa2d1053eb3a34678d5595d9643c7e8f75eafcddfec"
+  },
+  "source": {
+    "mail_path": "./data/printer_history/daily/mail-2026-07-01.json",
+    "states_path": "./data/printer_history/daily/printer-states-2026-07-01.json",
+    "mapping_path": "config/客户名称机身编号映射表.xlsx"
+  },
+  "workbook": {
+    "source_messages": 212,
+    "comparison_rows": 212,
+    "status_rows": 88,
+    "unique_serials": 43,
+    "missing_serials": [],
+    "missing_locations": [
+      "213909",
+      "253235",
+      "340595",
+      "393672",
+      "674176",
+      "704008",
+      "704013",
+      "736631",
+      "736662",
+      "736989"
+    ],
+    "mapping_duplicates": [
+      {
+        "serial": "132423",
+        "candidates": [
+          {
+            "customer": "昆山坚田",
+            "location": "老厂2F制造办公室"
+          },
+          {
+            "customer": "坚田",
+            "location": "2F制造办公室"
+          }
+        ],
+        "selected": {
+          "customer": "昆山坚田",
+          "location": "老厂2F制造办公室",
+          "index": 0,
+          "score": 2
+        }
+      },
+      {
+        "serial": "709800",
+        "candidates": [
+          {
+            "customer": "圆融发展",
+            "location": "20F"
+          },
+          {
+            "customer": "圆融发展",
+            "location": ""
+          }
+        ],
+        "selected": {
+          "customer": "圆融发展",
+          "location": "20F",
+          "index": 0,
+          "score": 2
+        }
+      }
+    ],
+    "sheets": {
+      "mapping": "客户名称机身编号映射表",
+      "comparison": "对比文件",
+      "status": "打印机状态-2026-07-01-00001"
+    },
+    "formula_error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+  },
+  "output": {
+    "path": "./data/daily_reports/2026-07-01/打印机信息汇总-2026-07-01.xlsx",
+    "sha256": "f468d3b8890139f5538564079c03d24346c2833ec1d82eb297be8a59f0d0c904",
+    "size_bytes": 28927
+  }
+}

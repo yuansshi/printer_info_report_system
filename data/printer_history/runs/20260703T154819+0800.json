@@ -1,0 +1,308 @@
+{
+  "run_id": "20260703T154819+0800",
+  "status": "success",
+  "started_at": "2026-07-03T15:48:19.484442+08:00",
+  "completed_at": "2026-07-03T15:48:31.746996+08:00",
+  "source": "saved history",
+  "timezone": "Asia/Shanghai",
+  "fetch_ranges": [],
+  "fetched_partitions": [],
+  "validation": {
+    "start": "2026-06-01",
+    "end": "2026-07-02",
+    "days": 32,
+    "mail": 4178,
+    "states": 4178,
+    "parse_rate": 1.0,
+    "daily": [
+      {
+        "date": "2026-06-01",
+        "mail": 0,
+        "states": 0,
+        "mail_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "states_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      {
+        "date": "2026-06-02",
+        "mail": 0,
+        "states": 0,
+        "mail_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "states_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      },
+      {
+        "date": "2026-06-03",
+        "mail": 147,
+        "states": 147,
+        "mail_sha256": "d0ac4bf350d5905db929c64872d45df9e5c03892a139b10d3cb36b0461162c32",
+        "states_sha256": "68c0268078a92fec605981b5ffbb6c586101781bef469ce226bdd001cd2ebd94"
+      },
+      {
+        "date": "2026-06-04",
+        "mail": 225,
+        "states": 225,
+        "mail_sha256": "21f8a2f34976f60e0fb65d89191a213cd88fe5a66635ab6b6c942f84e3a50a3f",
+        "states_sha256": "2a72fb363f62e986079d351ace45c8e1276182e7a9b7721cff424fdce07606cd"
+      },
+      {
+        "date": "2026-06-05",
+        "mail": 196,
+        "states": 196,
+        "mail_sha256": "3726e57e11451d8fab2780770ceb8974942bc7c2477aa3128acee0e604afaf3d",
+        "states_sha256": "3416974d438d067bce25974566ca397eb391c2187803302d757fc768cb67e57f"
+      },
+      {
+        "date": "2026-06-06",
+        "mail": 124,
+        "states": 124,
+        "mail_sha256": "7220358e5da8721d3a7181a8d9ad8076d677008a91c4aa2cf1ed4e7ddd8672b9",
+        "states_sha256": "7f8b89624cd215a796081656a5dd592091dea680d7b0b344dac341e23ce4a100"
+      },
+      {
+        "date": "2026-06-07",
+        "mail": 88,
+        "states": 88,
+        "mail_sha256": "93e23dbe1d8a730e35daa70c5d8e3cedef6bb56c3919b7e9ec0a6656bd5bc8eb",
+        "states_sha256": "6365fe65c29409335f647c2a7c3b13feaafae9f2249238c893fc6b25999ddc9c"
+      },
+      {
+        "date": "2026-06-08",
+        "mail": 208,
+        "states": 208,
+        "mail_sha256": "52caf8746d2bb32b9c8b2379dfefb88defe0c77fa1dc8972d3f2bb5b9b2705d9",
+        "states_sha256": "a6b17c1c7d0d429a5311157a7b87491be1a760e067295a5cb65f836f77a9fa39"
+      },
+      {
+        "date": "2026-06-09",
+        "mail": 190,
+        "states": 190,
+        "mail_sha256": "afe8ac5c506a45f583caf31cea2587aac53273a4e08b1e9296a10ae5bffaa29e",
+        "states_sha256": "4ad9318aa61a92e85ca050f5f34de17ab6d69808ce5b76f74d224ffe8a7549bb"
+      },
+      {
+        "date": "2026-06-10",
+        "mail": 144,
+        "states": 144,
+        "mail_sha256": "804498fe15ec7505f2bdd14e9670d64ec6371481c799c6669770e071ce858a0c",
+        "states_sha256": "ef20a92b693a3167d003b069add85b29050c74b1336ac0321e01f6c3dd6b1016"
+      },
+      {
+        "date": "2026-06-11",
+        "mail": 148,
+        "states": 148,
+        "mail_sha256": "4fcb6ab2bc5d959b1e2b7252a5536939b93f97b0f20c5b3710ad86312ab90d92",
+        "states_sha256": "e9eb55f06e61adc011114dad24c0d1056a9a6315fa697f9452f5984ab308c32b"
+      },
+      {
+        "date": "2026-06-12",
+        "mail": 165,
+        "states": 165,
+        "mail_sha256": "16da1cedc370c756a19c084de59cb5a8dbe4e1668eb83eb952f5ed0135aec11a",
+        "states_sha256": "79c6ae0a73d7054caf23d2a6a6fc96d35baad7641e209f68efd20c367672b3d1"
+      },
+      {
+        "date": "2026-06-13",
+        "mail": 105,
+        "states": 105,
+        "mail_sha256": "16adcfa589a3313ba86e24b0011955d5fa23d66f9a57f1cd1840f59f1d7af0bd",
+        "states_sha256": "63a2e7cfa4797e6bd1b421f0ba6c844e3ba9096ad70a23d03b316dca296c61a9"
+      },
+      {
+        "date": "2026-06-14",
+        "mail": 48,
+        "states": 48,
+        "mail_sha256": "94c73a120162a42ba8776e9a1f00d388c03278933575893fccff9354bd66e2a6",
+        "states_sha256": "5f91c4d0ab094718ecaaa6acc72e199872ed43323c99515fabee414a8e54d38c"
+      },
+      {
+        "date": "2026-06-15",
+        "mail": 155,
+        "states": 155,
+        "mail_sha256": "5ea3269b03139809ab842e0bf135e24d399ede9f6be976fc52c663fca39d00e6",
+        "states_sha256": "d4e1576c07254ad35b6d591e3baa7feddd040b597afac2751d88c671ebd23ce9"
+      },
+      {
+        "date": "2026-06-16",
+        "mail": 163,
+        "states": 163,
+        "mail_sha256": "ce9dea8630751a1fd7856f7493f5a88459b49429bfab89916bfb5c1d86c93728",
+        "states_sha256": "cb8d89fed44928fdad38c3f456ed70262814a84b56a745c80c281f1770c57b7e"
+      },
+      {
+        "date": "2026-06-17",
+        "mail": 126,
+        "states": 126,
+        "mail_sha256": "5006cf73d3bccdf90e405f6ba4df3c7ea231eed6b60f32881670567c0512eabe",
+        "states_sha256": "d212479b70b00ae9f780dcdfa10f16182b51c052bc32d5b86783938dc7c80203"
+      },
+      {
+        "date": "2026-06-18",
+        "mail": 155,
+        "states": 155,
+        "mail_sha256": "0c0a5dc75d9a79c0c9dee362adabcd96bef0779a5d45374e109ab2f309f71f97",
+        "states_sha256": "7822af60d5b1cbda80dd67fd653d3cb9645ae4d84d8448de5108cf6a2a63c7c9"
+      },
+      {
+        "date": "2026-06-19",
+        "mail": 40,
+        "states": 40,
+        "mail_sha256": "ce1456484dae350dbca2da1055d8270923f7617414fe2ad86545c54159c6c714",
+        "states_sha256": "6bc270c70636d81543dcef6ac019a3916f0c31cf6956a093190f792855a2aa13"
+      },
+      {
+        "date": "2026-06-20",
+        "mail": 90,
+        "states": 90,
+        "mail_sha256": "b6761f3231fed65dc88c8603f419c07cbf7b810b7dd6554019c54b0f9a650ec4",
+        "states_sha256": "abe038f6e795c62137475222d46a41c21bd789911b2df0506ae4c01e809be522"
+      },
+      {
+        "date": "2026-06-21",
+        "mail": 83,
+        "states": 83,
+        "mail_sha256": "7d889ab6f7e2ace155e832c7f2fd45ac525d6c472a83c9270a9448ec4c5c7f12",
+        "states_sha256": "f400ba385ae7ed8101fafb48132d21e4d875d6678451e42317b65a21da9ab5fe"
+      },
+      {
+        "date": "2026-06-22",
+        "mail": 174,
+        "states": 174,
+        "mail_sha256": "ad9da913584ad0e0a1220caa2cea1d524de5bd2ab5156adab4950489cc3b77e7",
+        "states_sha256": "b4fd5451a3fca1a9e135f269ad7a96c06910976e7d3374b98b78efd819df48e8"
+      },
+      {
+        "date": "2026-06-23",
+        "mail": 133,
+        "states": 133,
+        "mail_sha256": "3f3438b979fae93a9123edf03d900e61162f93caeea907c1d1329fe431c8a451",
+        "states_sha256": "81ad80add718b86aa11efcd6cd5d10bf59a08a45d1514de8173a8a5b46d0a7a2"
+      },
+      {
+        "date": "2026-06-24",
+        "mail": 126,
+        "states": 126,
+        "mail_sha256": "8fa5386f180f75ac01125f1cd8a3911e76a6c6d69fafa5e3273814ebea514fe7",
+        "states_sha256": "73958f49f35730ce52f3e7a793439f7ddd4c23debc3a15c965cdb9b12b94e73a"
+      },
+      {
+        "date": "2026-06-25",
+        "mail": 137,
+        "states": 137,
+        "mail_sha256": "db265f77a8eab1668cc89751c826103b2461a6c9eb2532680a52a3104ea2f429",
+        "states_sha256": "3d5f5a88b0e491b313bfbf37d7c5edcdc4580b7e51241ae43c4a989639aab49d"
+      },
+      {
+        "date": "2026-06-26",
+        "mail": 126,
+        "states": 126,
+        "mail_sha256": "011bd1a64385bc2fa27478f7ba245485db71036983f2fd8d7938ff25255f4ae0",
+        "states_sha256": "156a50b8fd690652f9bcac73aed2318d493e6ff912afc2de37fd54e01b6ed05b"
+      },
+      {
+        "date": "2026-06-27",
+        "mail": 95,
+        "states": 95,
+        "mail_sha256": "55de16118ebd4dbc9331dd20d633012456c13a65c45b69426abafdb4d3f436fd",
+        "states_sha256": "963f8ac307cf92f32dc7f4db63a4afa91a4ef76d867c1d97fe6517d97e12953f"
+      },
+      {
+        "date": "2026-06-28",
+        "mail": 97,
+        "states": 97,
+        "mail_sha256": "00e14981cc9ba20db12d097fff91acbb024d1144c186afeb89f07c65cfa2b893",
+        "states_sha256": "ba2f7e24307cf74d7dc27f25828ccc0ff0ce01357f893a362d29b8055d112d40"
+      },
+      {
+        "date": "2026-06-29",
+        "mail": 171,
+        "states": 171,
+        "mail_sha256": "afc9ccb0b485b33b2b0d800811abee3500cc5531a8fbe4a4f99b99366014d1f4",
+        "states_sha256": "b1a343ac04581a3a57a49655810dd94de1471371847e123a45b9ea168f0eccfd"
+      },
+      {
+        "date": "2026-06-30",
+        "mail": 184,
+        "states": 184,
+        "mail_sha256": "428fd5d80c4fdc4789f0b8d3fb2617ddca604fb7f2d4c6ec76e71492f0d2ce56",
+        "states_sha256": "9e081f915207c8982c43b5e80136ff88502d33a23ae7bb47f007d45b1a75b206"
+      },
+      {
+        "date": "2026-07-01",
+        "mail": 212,
+        "states": 212,
+        "mail_sha256": "c2f2c73ae840845e1c692452a33b7b7ef2a715f211db9659765e3bf2a9725edd",
+        "states_sha256": "af91c439c36ba8f5389ee19d7d8b0c5b567d0d61ddd456cf67ed23a1b18e7291"
+      },
+      {
+        "date": "2026-07-02",
+        "mail": 123,
+        "states": 123,
+        "mail_sha256": "d362b82f59a23a7736e966228a6affeab1ef054556906b1db8cfdd02085fd4d3",
+        "states_sha256": "f704791822eea1b4942c9e171f244ceaac1524f0badb00c7979801920bb994c1"
+      }
+    ]
+  },
+  "dashboard": {
+    "outputPath": "./dashboard/data.js",
+    "dates": [
+      "2026-06-01",
+      "2026-06-02",
+      "2026-06-03",
+      "2026-06-04",
+      "2026-06-05",
+      "2026-06-06",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-09",
+      "2026-06-10",
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-06-15",
+      "2026-06-16",
+      "2026-06-17",
+      "2026-06-18",
+      "2026-06-19",
+      "2026-06-20",
+      "2026-06-21",
+      "2026-06-22",
+      "2026-06-23",
+      "2026-06-24",
+      "2026-06-25",
+      "2026-06-26",
+      "2026-06-27",
+      "2026-06-28",
+      "2026-06-29",
+      "2026-06-30",
+      "2026-07-01",
+      "2026-07-02"
+    ],
+    "days": 32,
+    "notifications": 4178,
+    "devices": 50,
+    "alerts": 1025,
+    "meterRecords": 85,
+    "unknownSerials": [
+      "707038"
+    ],
+    "missingLocationSerials": [
+      "213905",
+      "213909",
+      "253235",
+      "340595",
+      "340640",
+      "393301",
+      "393672",
+      "674176",
+      "704008",
+      "704013",
+      "736631",
+      "736662",
+      "736989"
+    ],
+    "duplicateMappings": [
+      "132423",
+      "709800"
+    ]
+  }
+}
