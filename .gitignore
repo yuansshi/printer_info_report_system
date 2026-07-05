@@ -9,7 +9,6 @@ __pycache__/
 *.pyc
 .playwright-cli/
 data/printer_history/update.lock
-dashboard/data.js
 node_modules
 output/
 outputs/
