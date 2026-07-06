@@ -1,0 +1,171 @@
+{
+  "run_id": "20260706T223800+0800",
+  "status": "success",
+  "started_at": "2026-07-06T22:38:00.815901+08:00",
+  "completed_at": "2026-07-06T22:43:34.674521+08:00",
+  "source": "imap.sina.com",
+  "timezone": "Asia/Shanghai",
+  "fetch_ranges": [
+    {
+      "start": "2026-07-04",
+      "end": "2026-07-06"
+    }
+  ],
+  "fetched_partitions": [
+    {
+      "date": "2026-07-04",
+      "mail": 94,
+      "states": 94,
+      "unparsed_uids": [],
+      "changed": true
+    },
+    {
+      "date": "2026-07-05",
+      "mail": 63,
+      "states": 63,
+      "unparsed_uids": [],
+      "changed": true
+    },
+    {
+      "date": "2026-07-06",
+      "mail": 149,
+      "states": 149,
+      "unparsed_uids": [],
+      "changed": true
+    }
+  ],
+  "validation": {
+    "start": "2026-07-04",
+    "end": "2026-07-06",
+    "days": 3,
+    "mail": 306,
+    "states": 306,
+    "parse_rate": 1.0,
+    "daily": [
+      {
+        "date": "2026-07-04",
+        "mail": 94,
+        "states": 94,
+        "mail_sha256": "fa76f17168752de3c0228f2d587bdeaa5b401522bda8ebd881ec3ffd1c80f9f4",
+        "states_sha256": "c93ef0a2b78cd14578abcf417a1325bc5a1482faf153a6af80a55abfa2bc3eee"
+      },
+      {
+        "date": "2026-07-05",
+        "mail": 63,
+        "states": 63,
+        "mail_sha256": "9a1f3ee2abe88008d3231be4d8a2c3770310d48d68ea5f9a10c61e64ee8980eb",
+        "states_sha256": "5a03422905ae24b760669a2ae3da98251e3fc6d16f49793dc437459205def3e5"
+      },
+      {
+        "date": "2026-07-06",
+        "mail": 149,
+        "states": 149,
+        "mail_sha256": "01ed71093ad6b46e1a798c931312f58c74818a7ae46b9e739bb6bd58dec4b604",
+        "states_sha256": "e42523fd4342af098a7a460059c943beb759c701ed37dd181f21945c99edd590"
+      }
+    ]
+  },
+  "mapping": {
+    "source": "客户名称机身编号映射表.xlsx",
+    "rows": 112,
+    "source_sha256": "44f1f5745db4e1143fba248e7ffa2f1867955305c3f972fa6af940711237e1b5",
+    "snapshot": "/Users/yuansshi/Projects/printer_info_report_system/data/printer_history/mapping.json",
+    "snapshot_sha256": "d28cda743b7625d28992fbe4b0d91d422bb6d3c00e631356d3854bc370a8ecac"
+  },
+  "daily_reports": {
+    "directory": "data/daily_reports",
+    "dates": 3,
+    "generated": [
+      {
+        "date": "2026-07-04",
+        "path": "data/daily_reports/2026-07-04/打印机信息汇总-2026-07-04.xlsx",
+        "mail": 94,
+        "status_rows": 12,
+        "sha256": "ce74aba0cff9d3243cb2ae2b99d76c37e3bae45229f7c46f4b26bc44261f7f5f"
+      },
+      {
+        "date": "2026-07-05",
+        "path": "data/daily_reports/2026-07-05/打印机信息汇总-2026-07-05.xlsx",
+        "mail": 63,
+        "status_rows": 4,
+        "sha256": "3b53af4fa8e6774f22bffd6206a85efe23d2ddab31b33483da13333bacc8319a"
+      },
+      {
+        "date": "2026-07-06",
+        "path": "data/daily_reports/2026-07-06/打印机信息汇总-2026-07-06.xlsx",
+        "mail": 149,
+        "status_rows": 45,
+        "sha256": "7ca90f24b221891fa6f494429c7b4b6455a519deab2f6c9334a1248fe67af327"
+      }
+    ],
+    "skipped": []
+  },
+  "dashboard": {
+    "outputPath": "dashboard/data.js",
+    "dates": [
+      "2026-06-01",
+      "2026-06-02",
+      "2026-06-03",
+      "2026-06-04",
+      "2026-06-05",
+      "2026-06-06",
+      "2026-06-07",
+      "2026-06-08",
+      "2026-06-09",
+      "2026-06-10",
+      "2026-06-11",
+      "2026-06-12",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-06-15",
+      "2026-06-16",
+      "2026-06-17",
+      "2026-06-18",
+      "2026-06-19",
+      "2026-06-20",
+      "2026-06-21",
+      "2026-06-22",
+      "2026-06-23",
+      "2026-06-24",
+      "2026-06-25",
+      "2026-06-26",
+      "2026-06-27",
+      "2026-06-28",
+      "2026-06-29",
+      "2026-06-30",
+      "2026-07-01",
+      "2026-07-02",
+      "2026-07-03",
+      "2026-07-04",
+      "2026-07-05",
+      "2026-07-06"
+    ],
+    "days": 36,
+    "notifications": 4611,
+    "devices": 50,
+    "alerts": 1119,
+    "meterRecords": 88,
+    "unknownSerials": [
+      "707038"
+    ],
+    "missingLocationSerials": [
+      "213905",
+      "213909",
+      "253235",
+      "340595",
+      "340640",
+      "393301",
+      "393672",
+      "674176",
+      "704008",
+      "704013",
+      "736631",
+      "736662",
+      "736989"
+    ],
+    "duplicateMappings": [
+      "132423",
+      "709800"
+    ]
+  }
+}

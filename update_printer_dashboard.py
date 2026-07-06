@@ -493,14 +493,14 @@ def generate_daily_reports(
         states_path = history_dir / f"printer-states-{date_text}.json"
         report_dir = reports_dir / date_text
         output_path = report_dir / f"打印机信息汇总-{date_text}.xlsx"
-        manifest_path = report_dir / "manifest.json"
+        report_manifest_path = report_dir / "manifest.json"
         expected_inputs = {
             "mail_sha256": sha256_file(mail_path),
             "states_sha256": sha256_file(states_path),
             "mapping_sha256": mapping["source_sha256"],
             "builder_sha256": builder_sha256,
         }
-        if daily_report_is_current(manifest_path, output_path, expected_inputs):
+        if daily_report_is_current(report_manifest_path, output_path, expected_inputs):
             skipped.append(date_text)
             print(f"Daily XLSX {date_text}: current", file=sys.stderr, flush=True)
             continue
@@ -545,8 +545,11 @@ def generate_daily_reports(
                 revision_dir.mkdir(parents=True, exist_ok=True)
                 revision_dir.chmod(0o700)
                 shutil.copy2(output_path, revision_dir / f"{run_id}-{output_path.name}")
-                if manifest_path.exists():
-                    shutil.copy2(manifest_path, revision_dir / f"{run_id}-manifest.json")
+                if report_manifest_path.exists():
+                    shutil.copy2(
+                        report_manifest_path,
+                        revision_dir / f"{run_id}-manifest.json",
+                    )
             os.replace(temporary_path, output_path)
             output_path.chmod(0o600)
         finally:
@@ -581,7 +584,7 @@ def generate_daily_reports(
                 "size_bytes": output_path.stat().st_size,
             },
         }
-        atomic_write_json(manifest_path, report_manifest)
+        atomic_write_json(report_manifest_path, report_manifest)
         generated.append(
             {
                 "date": date_text,

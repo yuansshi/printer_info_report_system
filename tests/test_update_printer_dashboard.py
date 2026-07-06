@@ -7,6 +7,7 @@ import unittest
 import zipfile
 from datetime import date
 from pathlib import Path
+from types import SimpleNamespace
 from tempfile import TemporaryDirectory
 from unittest import mock
 
@@ -14,6 +15,7 @@ from update_printer_dashboard import (
     DAILY_REPORT_SCHEMA_VERSION,
     contiguous_ranges,
     daily_report_is_current,
+    generate_daily_reports,
     load_config,
     manifest_path,
     selected_fetch_dates,
@@ -154,6 +156,64 @@ class DashboardUpdateTests(unittest.TestCase):
 
             output.write_bytes(b"changed")
             self.assertFalse(daily_report_is_current(manifest, output, inputs))
+
+    def test_generate_daily_report_writes_manifest_for_new_output(self) -> None:
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            history = root / "history"
+            reports = root / "reports"
+            history.mkdir()
+            report_date = date(2026, 7, 4)
+            date_text = report_date.isoformat()
+            (history / f"mail-{date_text}.json").write_text("[]", encoding="utf-8")
+            (history / f"printer-states-{date_text}.json").write_text("[]", encoding="utf-8")
+            builder = root / "builder.mjs"
+            mapping_path = root / "mapping.xlsx"
+            builder.write_text("// test builder\n", encoding="utf-8")
+            mapping_path.write_bytes(b"mapping")
+            config = {
+                "node_bin": None,
+                "daily_report_builder": builder,
+                "daily_reports_dir": reports,
+                "history_dir": history,
+                "mapping_path": mapping_path,
+                "timezone": "Asia/Shanghai",
+            }
+
+            def fake_run(*_args: object, **kwargs: object) -> SimpleNamespace:
+                environment = kwargs["env"]
+                Path(environment["PRINTER_COMBINED_OUTPUT_PATH"]).write_bytes(b"xlsx")
+                result = {
+                    "comparisonRows": 0,
+                    "outputRows": 0,
+                    "uniqueSerials": 0,
+                    "missingSerials": 0,
+                    "missingLocations": 0,
+                    "mappingDuplicates": 0,
+                    "combinedSheets": ["mapping", "comparison", "status"],
+                    "combinedFormulaErrorScan": "matched 0 entries",
+                }
+                return SimpleNamespace(stdout=json.dumps(result))
+
+            with mock.patch("update_printer_dashboard.find_node", return_value="node"), mock.patch(
+                "update_printer_dashboard.subprocess.run", side_effect=fake_run
+            ):
+                result = generate_daily_reports(
+                    config,
+                    report_date,
+                    report_date,
+                    "test-run",
+                    {"source_sha256": "mapping-sha"},
+                )
+
+            report_manifest = json.loads(
+                (reports / date_text / "manifest.json").read_text(encoding="utf-8")
+            )
+            self.assertEqual(result["generated"][0]["date"], date_text)
+            self.assertEqual(
+                report_manifest["source"]["mail_path"],
+                Path(history / f"mail-{date_text}.json").name,
+            )
 
     def test_manifest_path_is_portable(self) -> None:
         project_file = Path(__file__).resolve()
